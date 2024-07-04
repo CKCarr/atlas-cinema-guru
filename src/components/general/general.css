@@ -1,0 +1,83 @@
+/* src/components/general/general.css */
+.input-container,
+.select-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    color: var(--color-dark-text);
+}
+
+.input-container {
+    background-color: var(--color-white);
+}
+
+.select-container {
+    background-color: var(--color-body);
+    color: var(--color-light-text);
+}
+
+.input-icon {
+    margin-right: 10px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    font-size: var(--font-size-large);
+    border-bottom: var(--color-red) 4px solid;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: 1px solid var(--color-red);
+    font-size: var(--font-size-large);
+}
+
+.select-field {
+    flex: 1;
+    padding: 8px;
+    background-color: var(--color-gray-100);
+    border: none;
+    border-bottom: var(--color-red) 4px solid;
+    border-radius: 4px;
+    color: var(--color-light-text);
+    font-size: var(--font-size-base);
+    width: 200px;
+}
+
+.label {
+    margin-right: 10px;
+    font-size: var(--font-size-xl);
+}
+
+.button {
+    width: 180px;
+    text-align: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--color-firebrick);
+    color: var(--color-white);
+    font-size: var(--font-size-large);
+}
+
+.button:hover {
+    background-color: var(--color-crimson-300);
+}
+
+.button-icon {
+    margin-right: 8px;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 8px;
+    border-radius: 30px;
+    border: none;
+    color: var(--color-gray-500);
+    background-color: var(--color-gray-100);
+    font-size: var(--font-size-base);
+}
