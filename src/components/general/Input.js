@@ -21,8 +21,10 @@ const Input = ({
 
     return (
         <div className={`input-container ${className}`}>
+            <div className="input-header" >
                 {icon && <FontAwesomeIcon icon={icon} className="input-icon" />}
                 {label && <label className="label">{label}</label>}
+            </div>
                 <input
                 type={type}
                 value={value}

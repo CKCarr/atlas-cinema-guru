@@ -1,0 +1,49 @@
+/* src/routes/auth/auth.css */
+.auth-container {
+    display: flex;
+    max-width: 550px;
+    align-items: center;
+    color: var(--color-dark-text);
+    background-color: var(--color-white);
+    margin: 0 auto;
+}
+
+.login-container {
+    max-width: 550px;
+    align-items: center;
+    color: var(--color-gray-100);
+    background-color: var(--color-white);
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.header {
+    align-items: center;
+    text-align: center;
+    font-size: var(--font-size-large);
+    padding: 5px;
+}
+
+.button {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.login-input {
+    width: 75%;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+.login-button {
+    width: 25%;
+    margin: 20px auto 20px 320px;
+    height: 40px;
+    padding: 5px;
+}
