@@ -16,7 +16,7 @@ const Register = ({
     setPassword,
 }) => {
     return (
-        <form className="login-container" >
+        <div className="login-container" >
         <h1 className="header" >Create a new account</h1>
         <Input
             icon={faUser}
@@ -44,15 +44,16 @@ const Register = ({
             label='Sign Up'
             onClick={() => console.log('Button clicked')}
             className="login-button"
+            type="submit"
         />
-        </form>
+        </div>
     )
     
 };
 
 Register.propTypes = {
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
+    username: PropTypes.string,
+    password: PropTypes.string,
     setUsername: PropTypes.func,
     setPassword: PropTypes.func,
 };

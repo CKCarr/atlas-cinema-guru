@@ -16,7 +16,7 @@ const Login = ({
     setPassword,
 }) => {
     return (
-        <form className="login-container" >
+        <div className="login-container" >
         <h1 className="header" >Sign in with your account</h1>
         <Input
             icon={faUser}
@@ -30,7 +30,7 @@ const Login = ({
         <Input
             icon={faKey}
             label="Password:"
-            type="text"
+            type="password"
             value={password}
             setValue={setPassword}
             inputAttributes={{
@@ -44,15 +44,16 @@ const Login = ({
             label='Sign In'
             onClick={() => console.log('Button clicked')}
             className="login-button"
+            type="submit"
         />
-        </form>
+        </div>
     )
     
 };
 
 Login.propTypes = {
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
+    username: PropTypes.string,
+    password: PropTypes.string,
     setUsername: PropTypes.func,
     setPassword: PropTypes.func,
 };

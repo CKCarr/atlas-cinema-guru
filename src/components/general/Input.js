@@ -40,8 +40,8 @@ Input.propTypes = {
     label: PropTypes.string,
     type: PropTypes.string.isRequired,
     className: PropTypes.string,
-    value: PropTypes.string.isRequired,
-    setValue: PropTypes.func.isRequired,
+    value: PropTypes.string,
+    setValue: PropTypes.func,
     icon: PropTypes.object,
     inputAttributes: PropTypes.object,
 };
