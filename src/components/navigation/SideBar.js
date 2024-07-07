@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { useNavigate } from 'react-dom';
+import { useNavigate } from 'react-router-dom';
 import "./navigation.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolder, faStar, faClock, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
