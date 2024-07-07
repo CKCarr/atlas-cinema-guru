@@ -52,9 +52,9 @@
 }
 
 .button {
-    width: 200px;
     text-align: center;
-    padding: 8px 8px;
+    justify-content: center;
+    padding: 8px 4px;
     border: none;
     cursor: pointer;
     background-color: var(--color-firebrick);
@@ -81,7 +81,7 @@
 }
 
 .input-icon {
-  color: #e19898; /* Replace this with your desired color */
+  color: #e19898;
 }
 
 .login-input {
