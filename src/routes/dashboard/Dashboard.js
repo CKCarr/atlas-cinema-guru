@@ -16,8 +16,8 @@ const Dashboard = ({ userUsername, setIsLoggedIn }) => {
 };
 
 Dashboard.propTypes = {
-  userUsername: PropTypes.string,
-  setIsLoggedIn: PropTypes.func,
+  userUsername: PropTypes.string.isRequired,
+  setIsLoggedIn: PropTypes.func.isRequired,
 }
 
 export default Dashboard;
