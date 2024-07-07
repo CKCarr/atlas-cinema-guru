@@ -1,17 +1,21 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 import './App.css';
 import Dashboard from './routes/dashboard/Dashboard';
 import Authentication from './routes/auth/Authentication';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  const [userUsername, setUserUsername] = useState('');
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
+      const decodedToken = jwtDecode(accessToken);
+      setUserUsername(decodedToken.username);
+
       axios.post('http://localhost:8000/routes/auth/', {}, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -19,7 +23,7 @@ const App = () => {
       })
       .then((response) => {
         setIsLoggedIn(true);
-        setUsername(response.data.username);
+        setUserUsername(response.data.username);
       })
       .catch((error) => {
         console.error('Authentication error:', error);
@@ -31,8 +35,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App ">
-      {isLoggedIn ? <Dashboard username={username} /> : <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUsername} className="auth-container" />}
+    <div className="App">
+      {isLoggedIn ? <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} /> : <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername} />}
     </div>
   );
 };

@@ -34,7 +34,6 @@ const Login = ({
             value={password}
             setValue={setPassword}
             inputAttributes={{
-                placeholder: 'Enter your password',
                 type: 'password',
             }}
             className="login-input"
@@ -48,7 +47,7 @@ const Login = ({
         />
         </div>
     )
-    
+
 };
 
 Login.propTypes = {

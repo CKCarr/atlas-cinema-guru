@@ -1,19 +1,23 @@
 // src/components/Dashboard.js
 import React from 'react';
-import '../../tailwind.css';
-import Input from '../../components/general/Input';
-import Button from '../../components/general/Button';
+import PropTypes from 'prop-types';
 
-const Dashboard = () => {
+import './dashboard.css';
+
+import Header from '../../components/navigation/Header';
+
+const Dashboard = ({ userUsername, setIsLoggedIn }) => {
+  console.log('Dashboard userUsername:', userUsername);
   return (
     <div className="dashboard">
-        <Button />
-        <Button />
-      <h2 className="text-center" >Welcome to the Dashboard</h2>
-      <Input />
-      <Input />
+      <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
     </div>
   );
 };
+
+Dashboard.propTypes = {
+  userUsername: PropTypes.string,
+  setIsLoggedIn: PropTypes.func,
+}
 
 export default Dashboard;

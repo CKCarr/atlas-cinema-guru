@@ -11,6 +11,7 @@
     background-color: var(--color-white);
 }
 
+/* Search Bar*/
 .select-container {
     background-color: var(--color-body);
     color: var(--color-light-text);
@@ -22,7 +23,6 @@
 
 .input-field {
     padding: 8px;
-    border-radius: 4px;
     border: none;
     font-size: var(--font-size-large);
     border-bottom: var(--color-firebrick) 1px solid;
@@ -52,9 +52,9 @@
 }
 
 .button {
-    width: 180px;
+    width: 200px;
     text-align: center;
-    padding: 8px 16px;
+    padding: 8px 8px;
     border: none;
     cursor: pointer;
     background-color: var(--color-firebrick);
@@ -64,7 +64,6 @@
 
 .button:hover {
     background-color: var(--color-crimson-300);
-    
 }
 
 .button-icon {
@@ -79,4 +78,12 @@
     color: var(--color-gray-500);
     background-color: var(--color-gray-100);
     font-size: var(--font-size-base);
+}
+
+.input-icon {
+  color: #e19898; /* Replace this with your desired color */
+}
+
+.login-input {
+    margin: 0 auto;
 }

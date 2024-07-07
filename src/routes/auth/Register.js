@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faKey, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import './auth.css';
 
@@ -34,13 +34,12 @@ const Register = ({
             value={password}
             setValue={setPassword}
             inputAttributes={{
-                placeholder: 'Enter your password',
                 type: 'password',
             }}
             className="login-input"
         />
         <Button
-            icon={faKey}
+            icon={faPlus}
             label='Sign Up'
             onClick={() => console.log('Button clicked')}
             className="login-button"
@@ -48,7 +47,6 @@ const Register = ({
         />
         </div>
     )
-    
 };
 
 Register.propTypes = {
