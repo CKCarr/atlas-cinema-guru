@@ -52,9 +52,13 @@
 }
 
 .button {
-    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     text-align: center;
-    padding: 8px 8px;
+    /* padding: 10px; */
+    width: 100%;
+    padding: 8px;
     border: none;
     cursor: pointer;
     background-color: var(--color-firebrick);
@@ -64,10 +68,16 @@
 
 .button:hover {
     background-color: var(--color-crimson-300);
+    width: 100%;
 }
 
 .button-icon {
-    margin-right: 8px;
+    margin-right: 10px;
+}
+
+.button-end-icon {
+    margin-left: auto;
+    display: none;
 }
 
 .search-bar {
@@ -81,7 +91,7 @@
 }
 
 .input-icon {
-  color: #e19898; /* Replace this with your desired color */
+  color: #e19898;
 }
 
 .login-input {
