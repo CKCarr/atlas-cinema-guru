@@ -36,6 +36,8 @@
 
 .auth-button {
     width: 50%;
+    text-align: center;
+    justify-content:center;
 }
 
 .login-input {

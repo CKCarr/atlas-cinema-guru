@@ -46,21 +46,28 @@
 }
 
 /* SideBar */
-.side-nav {
+
+.sidebar {
     background-color: var(--color-firebrick);
     width: 50px;
     height: 100vh;
+    transition: width 0.3s ease; /* Smooth transition */
+    overflow: hidden; /* Hide overflow content */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* test size for toggle open */
-/* .side-nav:hover {
-    width: 220px;
-} */
+.side-nav-button {
 
-.side-list {
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.nav-ul {
     text-align: center;
     padding: 20px 0;
-
+    list-style: none;
 }
 
 .side-icon {
@@ -69,15 +76,18 @@
 
 }
 
-.side-list-item {
-    height: 50px;
-    margin: 0 auto;
+.side-nav-item {
+    color: blue;
+}
+
+.side-nav-item:hover {
+    /* background-color: var(--color-crimson-200); */
 }
 
 
-.side-list-item:hover {
-    background-color: var(--color-crimson-200);
-}
+/** ================================================================== */
+
+/** ================================================================== */
 
 /* Activity */
 .activity-dash {
