@@ -37,37 +37,28 @@ const SideBar = () => {
     };
 
     useEffect(() => {
-        const fetchActivities = async () => {
-            const accessToken = localStorage.getItem('accessToken');
-            if (!accessToken) {
-                console.error('No access token found');
-                return;
+        axios.get('http://localhost:8000/api/activity/', {
+            headers: {
+                Authorization: `Bearer <accessToken>`
             }
-            try {
-                const response = await axios.get('http://localhost:8000/api/activity/', {
-                    headers: {
-                        Authorization: `Bearer ${accessToken}`,
-                        'Content-Type': 'application/json',
-                        Accept: 'application/json',
-                    },
-                });
-                setActivities(response.data);
-            } catch (error) {
-                console.error('Error fetching activities:', error);
-            }
-        };
-
-        fetchActivities();
+        })
+        .then(response => {
+            setActivities(response.data);
+        })
+        .catch(error => {
+            console.error('There was an error fetching the activities!', error);
+        });
     }, []);
 
     const handleMouseEnter = () => {
         setSmall(false); // Expand the sidebar on hover
-        setShowActivities(false);
+        setShowActivities(true)
+
     };
 
     const handleMouseLeave = () => {
         setSmall(true); // Collapse the sidebar when hover ends
-        setShowActivities(true);
+        setShowActivities(false)
     };
 
     return (
@@ -101,27 +92,27 @@ const SideBar = () => {
                     />
                 </li>
             </ul>
-            {!small &&  (
+            {!small && showActivities &&   (
                 <ul className='activity-ul'>
                     {activities.slice(0, 10).map((activity, index) => (
                         <Activity
-                // key={index}
+                key={index}
                 username="ckc"
                 movieTitle="Lights in the Dark"
-                // activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
-                // date={activity.createdAt}
+                activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
+                date={activity.createdAt}
                         />
                     ))}
                 </ul>
             )}
-
+{/* 
             <Activity
                 // key={index}
                 username="ckc"
                 movieTitle="Lights in the Dark"
                 // activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
                 // date={activity.createdAt}
-            />
+            /> */}
         </nav>
 
     );

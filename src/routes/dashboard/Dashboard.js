@@ -16,9 +16,10 @@ const Dashboard = ({ userUsername, setIsLoggedIn }) => {
     <BrowserRouter>
     <div className="dashboard">
       <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-      <SideBar />
+
       <div className="main-content">
-        <div className="content">
+          <SideBar />
+        {/* <div className="content"> */}
         {/** will add favorites or watch later here as switch from SideBar? */}
             <Routes>
               <Route path="/home" element={<HomePage />} />
@@ -26,7 +27,7 @@ const Dashboard = ({ userUsername, setIsLoggedIn }) => {
               <Route path="/watchlater" element={<WatchLater />} />
               <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
-        </div>
+        {/* </div> */}
       </div>
     </div>
     </BrowserRouter>
