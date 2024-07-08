@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import './navigation/navigation.css';
+import './components.css';
 
 const Activity = ({
     username = 'User',

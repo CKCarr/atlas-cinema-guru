@@ -44,7 +44,7 @@ const SideBar = () => {
                 return;
             }
             try {
-                const response = await axios.get('http://localhost:8000/api/activity', {
+                const response = await axios.get('http://localhost:8000/api/activity/', {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                         'Content-Type': 'application/json',
@@ -101,7 +101,36 @@ const SideBar = () => {
                     />
                 </li>
             </ul>
-            {!small && (
+            {!small &&  (
+                <ul className='activity-ul'>
+                    {activities.slice(0, 10).map((activity, index) => (
+                        <Activity
+                // key={index}
+                username="ckc"
+                movieTitle="Lights in the Dark"
+                // activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
+                // date={activity.createdAt}
+                        />
+                    ))}
+                </ul>
+            )}
+
+            <Activity
+                // key={index}
+                username="ckc"
+                movieTitle="Lights in the Dark"
+                // activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
+                // date={activity.createdAt}
+            />
+        </nav>
+
+    );
+
+};
+
+export default SideBar;
+
+            {/* {!small && (
                 <ul className='activity-ul'>
                     {activities.slice(0, 10).map((activity, index) => (
                         <Activity
@@ -113,10 +142,4 @@ const SideBar = () => {
                         />
                     ))}
                 </ul>
-            )}
-        </nav>
-    );
-
-};
-
-export default SideBar;
+            )} */}

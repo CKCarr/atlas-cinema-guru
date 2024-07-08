@@ -1,3 +1,46 @@
-.main-content {
+.dashboard {
 
+}
+
+/* .main-content {
+    display: flex;
+    flex-direction: row;
+} */
+
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #141414;
+    color: white;
+}
+
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* .header {
+  flex: 0 0 auto;
+} */
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* .sidebar {
+  flex: 0 0 200px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+} */
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
 }
