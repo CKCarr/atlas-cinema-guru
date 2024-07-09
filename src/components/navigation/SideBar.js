@@ -37,17 +37,28 @@ const SideBar = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/activity/', {
-            headers: {
-                Authorization: `Bearer <accessToken>`
+        const fetchActivities = async () => {
+            const token = localStorage.getItem('accessToken');
+            if (!token) {
+                console.error('No access token found');
+                return;
             }
-        })
-        .then(response => {
-            setActivities(response.data);
-        })
-        .catch(error => {
-            console.error('There was an error fetching the activities!', error);
-        });
+            try {
+                const response = await axios.get('http://localhost:8000/api/activity/', {
+                    headers: {
+                        Authorization: `Bearer ${token}`, // Include the auth token here
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                });
+                console.log('Activities response:', response.data); // Check the response from axios
+                setActivities(response.data);
+            } catch (error) {
+                console.error('There was an error fetching the activities!', error);
+            }
+        };
+
+        fetchActivities();
     }, []);
 
     const handleMouseEnter = () => {
@@ -69,7 +80,7 @@ const SideBar = () => {
                         label={!small ? "Home " : ""}
                         icon={faFolder}
                         endIcon={!small && selected === 'Home' ? faArrowRight : null} // Conditionally render endIcon
-                        // onClick={() => setPage('Home')}
+                        onClick={() => setPage('Home')}
                         className='side-nav-button'
                     />
                 </li>
@@ -92,7 +103,7 @@ const SideBar = () => {
                     />
                 </li>
             </ul>
-            {!small && showActivities &&   (
+            {showActivities && (
                 <ul className='activity-ul'>
                     {activities.slice(0, 10).map((activity, index) => (
                         <Activity
@@ -105,14 +116,6 @@ const SideBar = () => {
                     ))}
                 </ul>
             )}
-{/* 
-            <Activity
-                // key={index}
-                username="ckc"
-                movieTitle="Lights in the Dark"
-                // activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
-                // date={activity.createdAt}
-            /> */}
         </nav>
 
     );
@@ -120,17 +123,3 @@ const SideBar = () => {
 };
 
 export default SideBar;
-
-            {/* {!small && (
-                <ul className='activity-ul'>
-                    {activities.slice(0, 10).map((activity, index) => (
-                        <Activity
-                            key={index}
-                            user={activity.user.username}
-                            title={activity.title.title}
-                            activityType={activity.activityType === 'Favorite' ? { favorite: true } : { watchlater: true }}
-                            date={activity.createdAt}
-                        />
-                    ))}
-                </ul>
-            )} */}

@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 import MovieCard from '../../components/movies/MovieCard';
+import './dashboard.css'
 
 const Favorites = () => {
   const [movies, setMovies] = useState([]);

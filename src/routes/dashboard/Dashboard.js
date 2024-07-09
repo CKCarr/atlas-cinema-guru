@@ -1,8 +1,9 @@
 // src/components/Dashboard.js
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import './dashboard.css';
+
 
 import Header from '../../components/navigation/Header';
 import SideBar from '../../components/navigation/SideBar';
@@ -21,7 +22,7 @@ const Dashboard = ({ userUsername, setIsLoggedIn }) => {
           <SideBar />
         {/* <div className="content"> */}
         {/** will add favorites or watch later here as switch from SideBar? */}
-            <Routes>
+          <Routes>
               <Route path="/home" element={<HomePage />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/watchlater" element={<WatchLater />} />

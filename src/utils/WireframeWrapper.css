@@ -1,0 +1,55 @@
+/* Structural Tags */
+div { border: dashed 3px lightgray; }
+span { border: dashed 3px blue; }
+header { border: dashed 3px lightgreen; }
+footer { border: dashed 3px lightcoral; }
+section { border: dashed 3px lightgoldenrodyellow; }
+article { border: dashed 3px lightpink; }
+nav { border: dashed 3px lightseagreen; }
+aside { border: dashed 3px lightsalmon; }
+
+/* Text Content Tags */
+h1, h2, h3, h4, h5, h6 { border: solid 3px darkblue; }
+p { border: solid 3px lightblue; }
+ul, ol { border: solid 3px green; }
+li { border: solid 3px purple; }
+a { border: solid 3px darkviolet; }
+strong { border: solid 3px darkcyan; }
+em { border: solid 3px darkmagenta; }
+blockquote { border: solid 3px darkgoldenrod; }
+code { border: solid 3px darkolivegreen; }
+
+/* Form Tags */
+form { border: dotted 3px blue; }
+input { border: dotted 3px green; }
+textarea { border: dotted 3px red; }
+button { border: dotted 3px orange; }
+select { border: dotted 3px violet; }
+option { border: dotted 3px cyan; }
+label { border: dotted 3px magenta; }
+
+/* Media Tags */
+img { border: double 3px yellow; }
+video { border: double 3px grey; }
+audio { border: double 3px lightgrey; }
+canvas { border: double 3px brown; }
+svg { border: double 3px purple; }
+
+/* Table Tags */
+table { border: groove 3px darkgray; }
+tr { border: groove 3px darkblue; }
+td { border: groove 3px darkgreen; }
+th { border: groove 3px darkred; }
+thead { border: groove 3px darkorange; }
+tbody { border: groove 3px darkviolet; }
+tfoot { border: groove 3px darkcyan; }
+
+/* Other Tags */
+figure { border: inset 3px indigo; }
+figcaption { border: inset 3px navy; }
+details { border: inset 3px teal; }
+summary { border: inset 3px maroon; }
+mark { border: inset 3px lime; }
+time { border: inset 3px olive; }
+
+/* body { background-color: lightseagreen} */
