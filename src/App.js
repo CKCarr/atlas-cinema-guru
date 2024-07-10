@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
@@ -12,23 +11,32 @@ const App = () => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      const decodedToken = jwtDecode(accessToken);
-      setUserUsername(decodedToken.username);
+    console.log('AccessToken:', accessToken);
 
-      axios.post('http://localhost:8000/routes/auth/', {}, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
-      .then((response) => {
-        setIsLoggedIn(true);
-        setUserUsername(response.data.username);
-      })
-      .catch((error) => {
-        console.error('Authentication error:', error);
+    if (accessToken) {
+      try {
+        const decodedToken = jwtDecode(accessToken);
+        console.log('DecodedToken:', decodedToken);
+        setUserUsername(decodedToken.username);
+
+        axios.post('http://localhost:8000/routes/auth/', {}, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
+          .then((response) => {
+            console.log('Auth response:', response);
+            setIsLoggedIn(true);
+            setUserUsername(response.data.username);
+          })
+          .catch((error) => {
+            console.error('Authentication error:', error);
+            setIsLoggedIn(false);
+          });
+      } catch (error) {
+        console.error('Invalid token specified:', error.message);
         setIsLoggedIn(false);
-      });
+      }
     } else {
       setIsLoggedIn(false);
     }
