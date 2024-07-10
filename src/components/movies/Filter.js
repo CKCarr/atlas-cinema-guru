@@ -37,31 +37,31 @@ const Filter = ({
         <div className='search-bar'>
             <SearchBar title={title} setTitle={setTitle} />
         </div>
-        
-        <div class-name='filter-options'>
-        <Input
-        label="Min Year"
-        type="number"
-        value={minYear}
-        setValue={setMinYear}
-        className="year-input"
-      />
 
-      <Input
-        label="Max Year"
-        type="number"
-        value={maxYear}
-        setValue={setMaxYear}
-        className="year-input"
-      />
+        <div className='filter-options'>
+            <Input
+              label="Min Year"
+              type="number"
+              value={minYear}
+              setValue={setMinYear}
+              className="year-input"
+            />
 
-      <SelectInput
-        label="Sort By"
-        options={sortingOptions}
-        value={sort}
-        setValue={setSort}
-        className="sort-select"
-      />
+            <Input
+              label="Max Year"
+              type="number"
+              value={maxYear}
+              setValue={setMaxYear}
+              className="year-input"
+            />
+
+            <SelectInput
+              label="Sort By"
+              options={sortingOptions}
+              value={sort}
+              setValue={setSort}
+              className="sort-select"
+            />
         </div>
     </div>
 

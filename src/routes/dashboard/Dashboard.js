@@ -17,6 +17,7 @@ const Dashboard = ({ userUsername, setIsLoggedIn }) => {
     <BrowserRouter>
       <div className="dashboard">
         <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
+          <SideBar />
         <div className="main-content">
           <SideBar />
           <div className="content-area">

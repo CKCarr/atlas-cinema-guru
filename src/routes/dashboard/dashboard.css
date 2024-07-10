@@ -23,7 +23,9 @@
 .main-content {
   display: flex;
   flex: 1;
-  margin-top: 60px; /* Adjust according to the header height */
+
+  margin-top: 20px; /* Adjust according to the header height */
+  overflow-y: auto;
 }
 
 /* Sidebar */
@@ -31,9 +33,8 @@
   width: 250px;
   background-color: #222;
   color: white;
-
-  position: fixed;
-  top: 60px; /* Adjust according to the header height */
+  height:100vh;
+  top: 60px;
   bottom: 0;
   overflow-y: auto;
   z-index: 500;
@@ -41,15 +42,17 @@
 
 /* Content area */
 .content-area {
+  position:relative;
   flex: 1;
-  margin-left: 250px;
-  padding: 20px;
-  overflow-y: auto;
+  margin-left: 210px;
+  padding: 10px;
+  /* overflow-y: hidden; */
 }
 
 /* Adjustments for specific components if needed */
 .homepage, .favorites, .watchlater {
   padding: 20px;
+  overflow-y: auto;
 }
 
 
@@ -76,10 +79,8 @@
 }
 
 .filter-container {
-  margin-bottom: 20px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: var(--color-gray-200);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

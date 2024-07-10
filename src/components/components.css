@@ -22,7 +22,7 @@
     left: 54%;
     transform: translateX(-50%);
     bottom: 0; /* Align the underline with the bottom of the text */
-    width: 68%; /* Make the underline longer than the text */
+    width: 88%; /* Make the underline longer than the text */
     height: 2px; /* Adjust the thickness of the underline */
     background-color: var(--color-white);
 }
