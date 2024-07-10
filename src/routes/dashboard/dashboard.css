@@ -4,7 +4,13 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+}
+
+/* Adjustments for specific components if needed */
+.homepage, .favorites, .watchlater {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -49,12 +55,6 @@
   /* overflow-y: hidden; */
 }
 
-/* Adjustments for specific components if needed */
-.homepage, .favorites, .watchlater {
-  padding: 20px;
-  overflow-y: auto;
-}
-
 
 .watch-later {
   padding: 20px;
@@ -95,10 +95,10 @@
 /* Individual movie card */
 .movie-card {
   background-color: var(--color-gray-200);
-  height: 450px;
+  height: 300px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: calc(20% - 20px); /* 5 cards per row with space */
+  width: calc(20% - 10px); /* 5 cards per row with space */
   box-sizing: border-box;
   padding: 10px;
   transition: transform 0.2s;

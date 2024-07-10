@@ -45,6 +45,8 @@
     justify-content: center;
     margin: 0 auto;
     padding: 10px;
+    background-color: var(--color--white);
+
 }
 
 .auth-header {
