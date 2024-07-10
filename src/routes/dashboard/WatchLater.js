@@ -1,10 +1,9 @@
 // src/routes/WatchLater
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-
+import api from '../../utils/axiosConfig';
 import MovieCard from '../../components/movies/MovieCard';
+import './dashboard.css';
 
 const WatchLater = () => {
   const [movies, setMovies] = useState([]);
@@ -12,7 +11,8 @@ const WatchLater = () => {
   useEffect(() => {
     const fetchWatchLater = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/titles/watchlater');
+        const response = await api.get('/api/titles/watchlater');
+        console.log('API Response - watchlater', response.data);
         setMovies(response.data);
       } catch (error) {
         console.error('Error fetching watch later:', error);
@@ -32,10 +32,7 @@ const WatchLater = () => {
           {movies.map((movie, index) => (
             <MovieCard
               key={index}
-              image={movie.image}
-              title={movie.title}
-              description={movie.description}
-              tags={movie.tags}
+              movie={movie}
             />
           ))}
         </div>

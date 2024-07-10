@@ -1,0 +1,131 @@
+/* src/components/movies/movies.css*/
+
+/* TAG component */
+.tag {
+    text-transform: capitalize;
+}
+
+.tag {
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid var(--color-crimson-200);
+    background-color: var(--color-gray-300);
+    border-radius: 24px;
+    display: inline-block;
+}
+
+.tag.selected {
+    background-color: var(--color-crimson-200);
+    color: var(--color-white);
+    border-color: var(--color-crimson-200);
+    }
+
+/* FILTER componenent*/
+
+.filter-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+
+}
+
+.filter-options {
+
+}
+
+.year-input {
+    margin-bottom: 10px;
+    background-color: var(--color-gray-300)
+}
+
+.sort-select {
+    margin-bottom: 10px;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-transform: Capitalize;
+}
+
+  
+/* MovieCard componenet */
+
+.movie-card {
+  list-style-type: none;
+  position: relative;
+  margin: 15px;
+  width: 300px;
+}
+
+.movie-card-content {
+  position: relative;
+}
+
+.movie-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.movie-synopsis {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-genre {
+  background-color: var(--color-crimson-200);
+  border-radius: 35px;
+  padding: 5px 10px;
+  margin: 2px;
+  font-size: 0.8em;
+}
+
+.movie-icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-favorite, .icon-watchlater {
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.icon-favorite.active, .icon-watchlater.active {
+  color: gold;
+}
+

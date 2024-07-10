@@ -12,6 +12,32 @@
 }
 
 /* Search Bar*/
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar {
+    flex-grow: 1;
+    padding: 8px 12px;
+    padding-left: 80px; /* Adjust padding to fit the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 16px;
+    color: #888;
+    margin-right: 10px;
+
+}
+
+
 .select-container {
     background-color: var(--color-body);
     color: var(--color-light-text);
@@ -52,12 +78,11 @@
 }
 
 .button {
-    display: flex;
+    height:50px;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    /* padding: 10px; */
-    width: 100%;
+    padding: 10px;
     padding: 8px;
     border: none;
     cursor: pointer;
@@ -67,8 +92,7 @@
 }
 
 .button:hover {
-    background-color: var(--color-crimson-300);
-    width: 100%;
+    background: var(--color-crimson-300);
 }
 
 .button-icon {
@@ -76,7 +100,7 @@
 }
 
 .button-end-icon {
-    margin-left: auto;
+    margin-left: 30px;
     display: none;
 }
 

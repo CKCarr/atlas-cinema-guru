@@ -17,7 +17,7 @@ const Register = ({
 }) => {
     return (
         <div className="login-container" >
-        <h1 className="header" >Create a new account</h1>
+        <h1 className="auth-header" >Create a new account</h1>
         <Input
             icon={faUser}
             label="Username:"

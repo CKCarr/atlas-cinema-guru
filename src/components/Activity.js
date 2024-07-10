@@ -19,17 +19,18 @@ const Activity = ({
 
     const activity = activityType.favorite ? 'favorite' : 'watch later'
 
-  return (
-    <div className='activity-dash'>
-      <h3 className='activity-title'>Latest Activities </h3>
-      <li className='activity-list'>
-        <p className='activity-info'>
-          <span className='highlight'>{username}</span> added 
-          <span className='highlight'> {movieTitle} </span> to {activity} - {formattedDate}
-        </p>
-      </li>
-    </div>
-  );
+    return (
+      <div className='activity-dash max-w-full overflow-hidden'>
+        <h3 className='activity-title'>Latest Activities </h3>
+        <li className='activity-list'>
+          <p className='activity-info break-words'>
+            <span className='highlight'>{username}</span> added 
+            <span className='highlight'> {movieTitle} </span> to {activity} - {formattedDate}
+          </p>
+        </li>
+      </div>
+    );
+
 };
 
 Activity.propTypes = {

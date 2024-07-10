@@ -1,5 +1,14 @@
 /* index.css */
 
+/* p {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+} */
+
+/* import tailwind */
+@import './tailwind.css';
+
 /* Import normalize.css */
 @import 'normalize.css';
 

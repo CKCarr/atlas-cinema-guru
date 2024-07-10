@@ -17,7 +17,7 @@ const Login = ({
 }) => {
     return (
         <div className="login-container" >
-        <h1 className="header" >Sign in with your account</h1>
+        <h1 className="auth-header" >Sign in with your account</h1>
         <Input
             icon={faUser}
             label="Username:"
