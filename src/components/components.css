@@ -1,7 +1,6 @@
 /* Activity */
 .activity-dash {
     background-color: var(--color-gray-200);
-
     color: var(--color-light-text);
     padding: 0 5px;
 }

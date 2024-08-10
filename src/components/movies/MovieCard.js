@@ -81,12 +81,15 @@ const MovieCard = ({ movie }) => {
             />
           </div>
         </div>
+        <div className='movie-card-footer'>
             <p className="movie-synopsis">{movie.synopsis}</p>
             <div className="movie-genres">
               {movie.genres.map((genre, index) => (
                 <span key={index} className="movie-genre">{genre}</span>
               ))}
             </div>
+        </div>
+
       </li>
     );
 };

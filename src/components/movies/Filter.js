@@ -32,8 +32,8 @@ const Filter = ({
   ];
 
   return (
-    <>
-        <div className="filter-container">
+    <div className='container'>
+        <div className="filter-container-options">
         <div className='search-bar'>
             <SearchBar title={title} setTitle={setTitle} />
         </div>
@@ -78,7 +78,7 @@ const Filter = ({
         ))}
       </ul>
     </div>
-    </>
+    </div>
 
 
   );

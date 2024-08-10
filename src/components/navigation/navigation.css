@@ -10,7 +10,7 @@
 .nav-title {
     color: var(--color-light-text);
     font-size: var(--font-size-h3);
-    margin: 0;
+    margin: 5px;
     padding: 10px;
     align-items: center;
 }
@@ -48,11 +48,9 @@
 /* SideBar */
 
 .sidebar {
-    position: absolute;
     background-color: var(--color-firebrick);
-    margin-top: 5px;
-    width: 50px;
-    height: 100vh;
+    width: 60px;
+    height: 100%;
     transition: width 0.3s ease; /* Smooth transition */
     overflow: hidden; /* Hide overflow content */
     white-space: nowrap; /* Prevent text wrapping */
@@ -64,13 +62,14 @@
 
 .nav-ul {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     list-style: none;
+    align-items: center;
 }
 
 .side-icon {
     color: var(--color-white);
-    margin-left: 40px;
+    margin-right: 18px;
 }
 
 .end-icon {
@@ -80,11 +79,12 @@
 .side-nav-item {
     width: 100%;
     cursor: pointer;
+    justify-content: space-between;
     color: var(--color-light-text);
     text-decoration: none;
-    /* display: block; */
+    display: block;
     transition: background-color 0.3s ease;
-    padding: 5px 0;
+    padding: 15px 0;
 }
 
 .side-nav-item:hover {
@@ -168,5 +168,5 @@
 
 /* Desktop devices */
 @media (min-width: 1025px) {
-    /* No additional styles needed as default styles apply */
+
 }
