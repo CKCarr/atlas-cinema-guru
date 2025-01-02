@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/atlas-cinema-guru/static/css/main.94932ea0.css",
+    "main.js": "/atlas-cinema-guru/static/js/main.ab3d8757.js",
+    "static/media/unavailable.svg": "/atlas-cinema-guru/static/media/unavailable.6a65d011d63d6a744c6c08d57480c2e8.svg",
+    "index.html": "/atlas-cinema-guru/index.html",
+    "main.94932ea0.css.map": "/atlas-cinema-guru/static/css/main.94932ea0.css.map",
+    "main.ab3d8757.js.map": "/atlas-cinema-guru/static/js/main.ab3d8757.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94932ea0.css",
+    "static/js/main.ab3d8757.js"
+  ]
+}
