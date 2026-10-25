@@ -1,8 +1,19 @@
 import axios from 'axios';
 
+const configuredApiUrl = process.env.REACT_APP_API_URL;
+const useDevelopmentProxy =
+  process.env.NODE_ENV === 'development' &&
+  window.location.hostname.endsWith('.app.github.dev');
+const apiBaseUrl = (
+  configuredApiUrl ||
+  (useDevelopmentProxy
+    ? ''
+    : 'http://localhost:8000')
+).replace(/\/$/, '');
+
 // Create an Axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: apiBaseUrl,
 });
 
 // Add a request interceptor to include the Authorization header

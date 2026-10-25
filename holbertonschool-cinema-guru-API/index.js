@@ -6,11 +6,22 @@ const authRouter = require('./routes/auth')
 const titlesRouter = require('./routes/titles')
 const userActivitiesRouter = require('./routes/userActivities')
 const fs = require("fs");
+const { Title } = require('./models/Title');
 require('dotenv').config()
 
 const app = express();
+const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000,http://localhost:8000')
+    .split(',')
+    .map(origin => origin.trim());
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: (origin, callback) => {
+        const isCodespacesFrontend = /^https:\/\/[a-z0-9-]+-3000\.app\.github\.dev$/.test(origin || '');
+        if (!origin || allowedOrigins.includes(origin) || isCodespacesFrontend) {
+            callback(null, true);
+        } else {
+            callback(new Error(`Origin ${origin} is not allowed by CORS`));
+        }
+    },
 }
 app.use(cors(corsOptions))
 
@@ -21,17 +32,23 @@ app.use('/api/auth', authRouter);
 app.use('/api/titles', titlesRouter);
 app.use('/api/activity', userActivitiesRouter);
 
-sequelize.sync({ force: true })
-    .then(async () => {
-        console.log(`Database & tables created!`);
-        console.log('Postgress Connected');
-        fs.readFile("dump.sql", 'utf8', async (err, data) => {
-            await sequelize.query(data)
-            console.log("DB Seeded");
-        })
-    })
-    .catch(err => console.log(err));
-
 const port = process.env.PORT || 8000;
 
-app.listen(port, () => console.log('Server running...'));
+const start = async () => {
+    await sequelize.authenticate();
+    await sequelize.sync();
+    console.log('Database connected and tables ready.');
+
+    if (await Title.count() === 0) {
+        const seedData = await fs.promises.readFile("dump.sql", 'utf8');
+        await sequelize.query(seedData);
+        console.log("DB Seeded");
+    }
+
+    app.listen(port, () => console.log('Server running...'));
+};
+
+start().catch(err => {
+    console.error('Failed to initialize the database:', err);
+    process.exit(1);
+});

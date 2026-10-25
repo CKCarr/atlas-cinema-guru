@@ -1,10 +1,10 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import './App.css';
 import Dashboard from './routes/dashboard/Dashboard';
 import Authentication from './routes/auth/Authentication';
+import api from './utils/axiosConfig';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,7 +16,7 @@ const App = () => {
       const decodedToken = jwtDecode(accessToken);
       setUserUsername(decodedToken.username);
 
-      axios.post('http://localhost:8000/routes/auth/', {}, {
+      api.post('/api/auth/', {}, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

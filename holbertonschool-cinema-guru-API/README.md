@@ -1,6 +1,26 @@
 # Holberton School Cinema Guru API
 This is a simple movies API dedicated for Holberton School React Project Holberton School Cinema Guru
 
+## Run locally
+
+From this directory, start the API and PostgreSQL with:
+
+```bash
+docker compose up --build
+```
+
+The API is available at `http://localhost:8000`; run the React app at
+`http://localhost:3000` to use registration and sign-in. The API connects to
+PostgreSQL through the host-published port `5433`, which can also work around
+Docker environments where containers cannot reach each other directly.
+PostgreSQL data is stored in the `node-db` Docker volume. The API keeps existing
+tables and only loads the sample movie data when the titles table is empty, so
+registered accounts persist across restarts.
+
+In GitHub Codespaces, only the frontend port `3000` needs to be forwarded.
+During development, the React dev server proxies `/api` requests to the API on
+port `8000`, avoiding browser cross-origin requests.
+
 ## Response Codes 
 ### Response Codes
 ```

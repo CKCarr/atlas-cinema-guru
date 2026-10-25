@@ -1,10 +1,10 @@
 // src/components/Authentication.js
 import React, {useState} from 'react';
-import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import './auth.css';
 
 import Button from '../../components/general/Button';
+import api from '../../utils/axiosConfig';
 
 import Login from './Login'
 import Register from './Register'
@@ -24,11 +24,9 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
 
   event.preventDefault();
 
-    const endpoint = _switch ? 'http://localhost:8000/api/auth/login' : 'http://localhost:8000/api/auth/register';
+    const endpoint = _switch ? '/api/auth/login' : '/api/auth/register';
     try {
-      console.log('Sending request to:', endpoint);
-
-      const response = await axios.post(endpoint, { username, password });
+      const response = await api.post(endpoint, { username, password });
 
 
       const { accessToken } = response.data;
@@ -45,7 +43,10 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
 
     } catch (error) {
       console.error('Authentication error:', error);
-      setError('Authentication failed. Please check your credentials and try again.');
+      setError(
+        error.response?.data?.message ||
+        'Could not reach the API. Check that its port is forwarded and the API is running.'
+      );
     }
   };
 
